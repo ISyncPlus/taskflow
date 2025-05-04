@@ -2,7 +2,7 @@ import React from 'react'
 import HomePage from './pages/HomePage'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router'
 import MainLayout from './layout/MainLayout'
-import ProjectsPage from './Pages/ProjectsPage'
+import ProjectsPage from './pages/ProjectsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import UnderConstruction from './components/UnderConstruction'
 const App = () => {

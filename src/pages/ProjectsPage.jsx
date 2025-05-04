@@ -5,7 +5,6 @@ const ProjectsPage = () => {
   return (
     <>
       <Projects/>
-      
     </>
   )
 }
