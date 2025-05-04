@@ -5,14 +5,14 @@ import RightSideBar from '../components/RightSideBar'
 import ScrollToTop from '../components/ScrollToTop'
 const MainLayout = () => {
   return (
-    <div className='flex'>
+    <div className='flex max-h-[1024px]'>
         <ScrollToTop/>
         
         <LeftSidebar />
 
-        <div>
+        <main>
         <Outlet/>
-        </div>
+        </main>
 
         <RightSideBar/>
         

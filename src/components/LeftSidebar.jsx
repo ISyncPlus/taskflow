@@ -3,60 +3,63 @@ import { PiCaretDownBold } from 'react-icons/pi'
 import { FiFileText } from "react-icons/fi";
 import { FaGear } from "react-icons/fa6";
 import { FaRegSquare } from "react-icons/fa6";
-import { Link } from 'react-router';
+import { NavLink } from 'react-router';
+import { useState } from 'react';
+
 const LeftSidebar = () => {
   return (
+
     <div>
-        <aside className="w-[257px] h-[64rem] pt-7 pb-4 pl-8 border-r-1 border-[#E6E4F0] flex flex-col">
-            <Link to="/" className='flex items-center'>
+        <aside className="w-[257px] h-full pt-7 pb-4 pl-8 border-r-1 border-[#E6E4F0] flex flex-col">
+            <NavLink to="/" className='flex items-center'>
                 <img src="/logo.svg" alt="TaskFlow" className="inline"/>
                 <h1 className="text-2xl inline ml-2 font-[500]">TaskFlow</h1>
-            </Link>
+            </NavLink>
 
                 {/* Section 1 */}
             <section className="flex flex-col gap-2 my-7 text-[#9896A3] pr-10 w-26.5 h-7 flex-1">
 
-                <div className='flex items-center w-49 p-1 '>
+                <NavLink to="/overview" className="flex items-center w-49 p-1">
                 <img src="/Category.svg" alt="Overview" className='w-5.5 h-5.5' />
                 <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                     Overview  
                 </p>
                 <p><PiCaretDownBold className='mt-1 text-lg transform translate-x-21'/></p>
-                </div>
+                </NavLink>
 
-                <div className='flex items-center w-49 p-1'>
+                <NavLink to="calendar" className='flex items-center w-49 p-1'>
                 <img src="/Calendar.svg" alt="Calendar" className='w-5.5 h-5.5' />
                 <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                     Calendar  
                 </p>
                 
                 
-                </div>
+                </NavLink>
 
-                <div className='flex items-center w-49 p-1'>
+                <NavLink to="analytics" className='flex items-center w-49 p-1'>
                 <img src="/Graph.svg" alt="Analytics" className='w-5.5 h-5.5' />
                 <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                     Analytics 
                 </p>
                 
-                </div>
+                </NavLink>
 
-                <div className='flex items-center w-49 p-1'>
+                <NavLink to="activity" className='flex items-center w-49 p-1'>
                 <img src="/Activity.svg" alt="Activity" className='w-5.5 h-5.5' />
                 <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                     Activity  
                 </p>
                 
                 
-                </div>
+                </NavLink>
 
-                <Link to="/projects" className='flex items-center w-53 p-1 bg-[#5577FF] rounded-lg text-white py-[11px] px-2.5 transform -translate-x-1.5'>
+                <NavLink to="/projects" className='flex items-center w-53 p-1 bg-[#5577FF] rounded-lg text-white py-[11px] px-2.5 transform -translate-x-1.5'>
                 <img src="/Folder.svg" alt="folder-icon" className='w-5.5 h-5.5' />
                 <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                     Projects  
                 </p>
                 
-                </Link>
+                </NavLink>
                 
             </section>
 
