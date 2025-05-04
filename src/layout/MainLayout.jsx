@@ -1,20 +1,20 @@
 import React from 'react'
-import LeftSidebar from '../components/LeftSidebar'
 import { Outlet } from 'react-router'
-import RightSideBar from '../components/RightSideBar'
+import RightMenu from '../components/RightMenu'
 import ScrollToTop from '../components/ScrollToTop'
+import Sidebar from '../components/Sidebar'
 const MainLayout = () => {
   return (
     <div className='flex max-h-[1024px]'>
         <ScrollToTop/>
         
-        <LeftSidebar />
+        <Sidebar />
 
         <main>
         <Outlet/>
         </main>
 
-        <RightSideBar/>
+        <RightMenu/>
         
     </div>
   )

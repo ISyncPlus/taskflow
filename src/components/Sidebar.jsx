@@ -4,13 +4,12 @@ import { FiFileText } from "react-icons/fi";
 import { FaGear } from "react-icons/fa6";
 import { FaRegSquare } from "react-icons/fa6";
 import { NavLink } from 'react-router';
-import { useState } from 'react';
 
-const LeftSidebar = () => {
+const Sidebar = () => {
   return (
 
     <div>
-        <aside className="w-[257px] h-full pt-7 pb-4 pl-8 border-r-1 border-[#E6E4F0] flex flex-col">
+        <aside className="w-[257px] h-full pt-7 pb-4 pl-8 border-r-1 border-[#E6E4F0] flex flex-col overflow-y-scroll">
             <NavLink to="/" className='flex items-center'>
                 <img src="/logo.svg" alt="TaskFlow" className="inline"/>
                 <h1 className="text-2xl inline ml-2 font-[500]">TaskFlow</h1>
@@ -201,4 +200,4 @@ const LeftSidebar = () => {
   )
 }
 
-export default LeftSidebar
+export default Sidebar
