@@ -9,7 +9,7 @@ const Sidebar = () => {
   return (
 
     <div>
-        <aside className="flex flex-col w-[257px] h-screen 2xl:h-full pt-7 pb-4 pl-8 border-r-1 border-[#E6E4F0] overflow-y-scroll scrollbar-thin">
+        <aside className="flex flex-col w-[257px] h-screen 2xl:h-full pt-7 pb-4 pl-8 border-r-1 border-[#E6E4F0] overflow-y-scroll overflow-x-clip scrollbar-thin">
             <NavLink to="/" className='flex items-center'>
                 <img src="/logo.svg" alt="TaskFlow" className="inline"/>
                 <h1 className="text-2xl inline ml-2 font-[500]">TaskFlow</h1>

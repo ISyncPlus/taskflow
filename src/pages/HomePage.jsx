@@ -2,7 +2,7 @@ import React from 'react'
 import { Outlet } from 'react-router'
 const HomePage = () => {
   return (
-    <div className='w-[803px] flex justify-center mt-[40vh]'>
+    <div className="h-screen 2xl:h-full w-[803px] flex justify-center">
       <section className='flex flex-col items-center justify-center'>
         <img src="/logo.svg" alt="logo" className='h-15 w-15 mb-4'/>    
           <h3 className='font-bold text-2xl mb-1'>Welcome Back, Muhammed Ali!</h3>
