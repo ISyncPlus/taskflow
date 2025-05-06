@@ -4,7 +4,7 @@ import { IoEllipsisHorizontal } from "react-icons/io5";
 import { BsStopCircleFill } from "react-icons/bs";
 const Projects = () => {
   return (
-    <div className="bg-[#F9F8FF] w-[803px] h-full p-6">
+    <div className="bg-[#F9F8FF] w-[803px] h-screen p-6 overflow-y-scroll scrollbar-thin 2xl:h-full">
             {/* Projects Folder */}
             <section className=" font-medium">
                 <h1 className="text-[rgb(86,85,92)] text-[1rem]">

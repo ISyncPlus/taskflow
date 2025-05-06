@@ -9,14 +9,14 @@ const Sidebar = () => {
   return (
 
     <div>
-        <aside className="w-[257px] h-full pt-7 pb-4 pl-8 border-r-1 border-[#E6E4F0] flex flex-col overflow-y-scroll">
+        <aside className="flex flex-col w-[257px] h-screen 2xl:h-full pt-7 pb-4 pl-8 border-r-1 border-[#E6E4F0] overflow-y-scroll scrollbar-thin">
             <NavLink to="/" className='flex items-center'>
                 <img src="/logo.svg" alt="TaskFlow" className="inline"/>
                 <h1 className="text-2xl inline ml-2 font-[500]">TaskFlow</h1>
             </NavLink>
 
                 {/* Section 1 */}
-            <section className="flex flex-col gap-2 my-7 text-[#9896A3] pr-10 w-26.5 h-7 flex-1">
+            <section className="flex flex-col gap-2 my-7 text-[#9896A3] pr-10 w-26.5 flex-1">
 
                 <NavLink to="/overview" className="flex items-center w-49 p-1">
                 <img src="/Category.svg" alt="Overview" className='w-5.5 h-5.5' />
@@ -63,7 +63,7 @@ const Sidebar = () => {
             </section>
 
             {/* Projects Section */}
-            <section className="max-w-[12.375rem] mt-20">
+            <section className="max-w-[12.375rem]">
                 <header className="w-full border-t-1 border-[#E6E4F0] flex justify-between items-center pt-3 mb-5">
                 <h3 className="text-[#D3D2DC] text-[1rem]">
                 PROJECTS
@@ -121,7 +121,7 @@ const Sidebar = () => {
 
             {/* Tasks Section */}
             {/* Tasks */}
-            <section className="flex-3 max-w-[12.375rem] mt-5">
+            <section className="flex-2 max-w-[12.375rem] mt-5">
                 <header className="w-full border-t-1 border-[#E6E4F0] flex justify-between items-center pt-3 mb-5">
                 <h3 className="text-[#D3D2DC]">
                 TASKS
