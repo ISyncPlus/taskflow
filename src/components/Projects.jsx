@@ -266,7 +266,7 @@ const Projects = () => {
 
                     {/* Latest 1 */}
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>
-                        <img src="../src/img/Latest-1.png" alt="latest-1" className="w-57 h-28" />
+                        <img src="/Latest-1.png" alt="latest-1" className="w-57 h-28" />
 
                         <p className="flex mt-4">
                             <img src="/Rectangle 3.svg" alt="cloth icon" className="w-9.5 h-9.5 mr-2"/>
@@ -294,7 +294,7 @@ const Projects = () => {
 
                     {/* Latest 2 */}
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>
-                        <img src="../src/img/Latest-2.png" alt="latest-2" className="w-57 h-28" />
+                        <img src="/Latest-2.png" alt="latest-2" className="w-57 h-28" />
 
                         <p className="flex mt-4">
                             <img src="/Rectangle 2.svg" alt="flower icon" className="w-9.5 h-9.5 mr-2"/>
@@ -321,7 +321,7 @@ const Projects = () => {
 
                     {/* Latest 3 */}
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>
-                        <img src="../src/img/Latest-3.png" alt="latest-3" className="w-57 h-28" />
+                        <img src="/Latest-3.png" alt="latest-3" className="w-57 h-28" />
 
                         <p className="flex mt-4">
                             <img src="/Rectangle 4.svg" alt="gamer icon" className="w-9.5 h-9.5 mr-2"/>
@@ -349,10 +349,10 @@ const Projects = () => {
 
                     {/* Latest 4 */}
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>
-                        <img src="../src/img/Latest-4.png" alt="latest-4" className="w-57 h-28" />
+                        <img src="/Latest-4.png" alt="latest-4" className="w-57 h-28" />
 
                         <p className="flex mt-4">
-                            <img src="../src/img/archtech.png" alt="cloth icon" className="w-9.5 h-9.5 mr-2 rounded-full"/>
+                            <img src="/archtech.png" alt="cloth icon" className="w-9.5 h-9.5 mr-2 rounded-full"/>
                             
                             <section className="flex flex-col flex-1 ">
                                 <div className="flex justify-between">
@@ -377,10 +377,10 @@ const Projects = () => {
 
                     {/* Latest 5 */}
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>
-                        <img src="../src/img/Latest-5.png" alt="latest-5" className="w-57 h-28" />
+                        <img src="/Latest-5.png" alt="latest-5" className="w-57 h-28" />
 
                         <p className="flex mt-4">
-                            <img src="../src/img/orixon.png" alt="cloth icon" className="w-9.5 h-9.5 mr-2 rounded-full"/>
+                            <img src="/orixon.png" alt="cloth icon" className="w-9.5 h-9.5 mr-2 rounded-full"/>
                             
                             <section className="flex flex-col flex-1 ">
                                 <div className="flex justify-between">
@@ -405,10 +405,10 @@ const Projects = () => {
 
                     {/* Latest 6 */}
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>
-                        <img src="../src/img/Latest-6.png" alt="latest-6" className="w-57 h-28" />
+                        <img src="/Latest-6.png" alt="latest-6" className="w-57 h-28" />
 
                         <p className="flex mt-4">
-                            <img src="../src/img/unicom.png" alt="cloth icon" className="w-9.5 h-9.5 mr-2 rounded-full"/> 
+                            <img src="/unicom.png" alt="cloth icon" className="w-9.5 h-9.5 mr-2 rounded-full"/> 
                             
                             <section className="flex flex-col flex-1 ">
                                 <div className="flex justify-between">
