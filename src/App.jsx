@@ -4,7 +4,7 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 import MainLayout from './layout/MainLayout'
 import ProjectsPage from './pages/ProjectsPage'
 import NotFoundPage from './pages/NotFoundPage'
-import UnderConstruction from './components/UnderConstruction'
+import UnderConstructionPage from './pages/UnderConstructionPage'
 const App = () => {
     const router = createBrowserRouter
     (
@@ -12,10 +12,10 @@ const App = () => {
         <Route path="/" element={<MainLayout/>}>
           <Route index element={<HomePage/>}/>
           
-          <Route path="/overview" element={<UnderConstruction/>}/>
-          <Route path="/calendar" element={<UnderConstruction/>}/>
-          <Route path="/analytics" element={<UnderConstruction/>}/>
-          <Route path="/activity" element={<UnderConstruction/>}/>
+          <Route path="/overview" element={<UnderConstructionPage/>}/>
+          <Route path="/calendar" element={<UnderConstructionPage/>}/>
+          <Route path="/analytics" element={<UnderConstructionPage/>}/>
+          <Route path="/activity" element={<UnderConstructionPage/>}/>
           <Route path="/projects" element={<ProjectsPage/>}/>
 
 

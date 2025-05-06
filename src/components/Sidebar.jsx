@@ -174,7 +174,7 @@ const Sidebar = () => {
                 <main className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
                         <figure className="relative w-12 h-12">
-                            <img src="../src/img/profile.png" alt="profile" className="w-12 h-12 relative"/>
+                            <img src="./src/img/profile.png" alt="profile" className="w-12 h-12 relative"/>
                             <div className="border-white absolute bottom-0 -right-1 border-2 rounded-sm rounded-b-none bg-white transform translate-y-1">
                             <FaRegSquare className="fill-[#00B884] bg-[#00B884] rounded-xs w-3 h-3 transform "/>
 
