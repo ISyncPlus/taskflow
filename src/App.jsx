@@ -5,6 +5,7 @@ import MainLayout from './layout/MainLayout'
 import ProjectsPage from './pages/ProjectsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import UnderConstructionPage from './pages/UnderConstructionPage'
+import AddTaskPage from './pages/AddTaskPage'
 const App = () => {
     const router = createBrowserRouter
     (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/analytics" element={<UnderConstructionPage/>}/>
           <Route path="/activity" element={<UnderConstructionPage/>}/>
           <Route path="/projects" element={<ProjectsPage/>}/>
+          <Route path="/todos/add" element={<AddTaskPage/>}/>
 
 
           <Route path="*" element={<NotFoundPage/>}/>

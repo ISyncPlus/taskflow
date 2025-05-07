@@ -1,12 +1,20 @@
 import React from 'react'
+import initialTodos from '../todos.json'
 import { IoDocumentText } from "react-icons/io5";
 import { IoEllipsisHorizontal } from "react-icons/io5";
 import { useState } from 'react';
+import { Link } from 'react-router';
 const RightMenu = () => {
-  const [list1, setList1] = useState(false);
-  const [list2, setList2] = useState(false);
-  const [list3, setList3] = useState(false);
-  const [list4, setList4] = useState(false);
+const [todos, setTodos] = useState(initialTodos);
+const toggleChecked = (id) => {
+  setTodos(prev =>
+    prev.map(todo =>
+      todo.id == id ? { ...todo, checked: !todo.checked } : todo
+    )
+  );
+};
+
+
   return (
     <div>
       <aside className="w-[353px] h-[100vh] border-l-1 border-[#E6E4F0] py-7.5 pl-4 pr-6 overflow-y-scroll scrollbar-thin 2xl:h-full">
@@ -19,107 +27,43 @@ const RightMenu = () => {
             </p>
 
           </section>
-
+          <Link to="/todos/add">
           <img src="/Add.svg" alt="add-more" className="w-4 h-4 hover:cursor-pointer hover:scale-110 transition-all duration-500" />
+          </Link>
+          
         </header>
 
         <article className="flex flex-col gap-1 mt-3.5 mb-4">
-          {/* List 1 */}
-          <section className="py-3 px-2.5 border border-[#E6E4F0] rounded-xl bg-[#F9F8FF]">
-            <h1 className="flex items-center">
-              <input type="checkbox" name="list" id="" onClick={() => setList1(prev => !prev)} className="hover:cursor-pointer" />
-              <p className={`font-medium relative ml-2 text-sm after:content-[''] after:absolute after:h-[0.5px] after:bg-[#5577FFCC] after:top-1/2 after:w-full after:transition-all after:duration-400 after:left-0 ${list1 ? 'after:scale-x-100 text-[#5577FFCC]' : 'after:scale-x-0 text-black'} `}>
-                Donate $500 to the charity
+          {/* List 1 jsx*/}
+          {todos.map((todo)=> (
+              <section className="py-3 px-2.5 border border-[#E6E4F0] rounded-xl bg-[#F9F8FF]">
+              <h1 className="flex items-center">
+                <input type="checkbox" name="list" onClick={()=> toggleChecked(todo.id)}    className="hover:cursor-pointer" />
+                <p className={`font-medium relative ml-2 text-sm after:content-[''] after:absolute after:h-[0.5px] after:bg-[#5577FFCC] after:top-1/2 after:w-full after:transition-all after:duration-400 after:left-0 ${todo.checked ? 'after:scale-x-100 text-[#5577FFCC]' : 'after:scale-x-0 text-black'} `}>
+                  {todo.title}
+                </p>
+              </h1>
+  
+              <p className="flex justify-between items-center">
+                <section className="mt-2">
+                  <button className="text-[#5577FF] text-xs bg-[#5577FF4D] py-1 px-2.5 rounded-full font-[600]">{todo.firstTag}</button>
+                  <button className={`text-[#00B884] text-xs bg-[#00B88433] py-1 px-2.5 rounded-full ml-1 font-[600] ${todo.secondTag == '' ? 'hidden' : ''}`}>{todo.secondTag}</button>
+  
+                </section>
+  
+                <section className="text-[#BBBABE] text-xs">
+                  May 20, 2025
+                </section>
+  
               </p>
-            </h1>
+  
+  
+            </section>
+          ))
 
-            <p className="flex justify-between items-center">
-              <section className="mt-2">
-                <button className="text-[#FFC800] text-xs bg-[#FFC8004D] py-1 px-2.5 rounded-full font-[600]">Donations</button>
-                <button className="text-[#00B884] text-xs bg-[#00B88433] py-1 px-2.5 rounded-full ml-1 font-[600]">Social</button>
-
-              </section>
-
-              <section className="text-[#BBBABE] text-xs">
-                May 20, 2025
-              </section>
-
-            </p>
-
-
-          </section>
-
-          {/* List 2 */}
-          <section className="py-3 px-2.5 border border-[#E6E4F0] rounded-xl bg-[#F9F8FF]">
-            <h1 className="flex items-center">
-              <input type="checkbox" name="list" id="" onClick={() => setList2(prev => !prev)} className="hover:cursor-pointer" />
-              <p className={`font-medium relative ml-2 text-sm after:content-[''] after:absolute after:h-[0.5px] after:bg-[#5577FFCC] after:top-1/2 after:w-full after:transition-all after:duration-400 after:left-0 ${list2 ? 'after:scale-x-100 text-[#5577FFCC]' : 'after:scale-x-0 text-black'} `}>
-                Do 500 pushups
-              </p>
-            </h1>
-
-            <p className="flex justify-between items-center">
-              <section className="mt-2">
-                <button className="text-[#49CCF9] text-xs bg-[#49CCF94D] py-1 px-2.5 rounded-full font-[600]">Sport</button>
-                <button className="text-[#FD71AF] text-xs bg-[#FD71AF33] py-1 px-2.5 rounded-full ml-1 font-[600]">Selfcare</button>
-
-              </section>
-
-              <section className="text-[#BBBABE] text-xs">
-                May 20, 2025
-              </section>
-
-            </p>
-
-
-          </section>
-
-          {/* List 3 */}
-          <section className="py-3 px-2.5 border border-[#E6E4F0] rounded-xl bg-[#F9F8FF]">
-            <h1 className="flex items-center">
-              <input type="checkbox" name="list" id="" onClick={() => setList3(prev => !prev)} className="hover:cursor-pointer" />
-              <p className={`font-medium relative ml-2 text-sm after:content-[''] after:absolute after:h-[0.5px] after:bg-[#5577FFCC] after:top-1/2 after:w-full after:transition-all after:duration-400 after:left-0 ${list3 ? 'after:scale-x-100 text-[#5577FFCC]' : 'after:scale-x-0 text-black'} `}>
-                Buy new headset
-              </p>
-            </h1>
-
-            <p className="flex justify-between items-center">
-              <section className="mt-2">
-                <button className="text-[#7B68EE] text-xs bg-[#7B68EE4D] py-1 px-2.5 rounded-full font-[600]">Shopping</button>
-                <button className="text-[#00B884] text-xs bg-[#00B88433] py-1 px-2.5 rounded-full ml-1 font-[600]">Set-up</button>
-
-              </section>
-
-              <section className="text-[#BBBABE] text-xs">
-                May 20, 2025
-              </section>
-
-            </p>
-
-          </section>
-
-          {/* List 4 */}
-          <section className="py-3 px-2.5 border border-[#E6E4F0] rounded-xl bg-[#F9F8FF]">
-            <h1 className="flex items-center">
-              <input type="checkbox" name="list" id="" onClick={() => setList4(prev => !prev)} className="hover:cursor-pointer" />
-              <p className={`font-medium relative ml-2 text-sm after:content-[''] after:absolute after:h-[0.5px] after:bg-[#5577FFCC] after:top-1/2 after:w-full after:transition-all after:duration-400 after:left-0 ${list4 ? 'after:scale-x-100 text-[#5577FFCC]' : 'after:scale-x-0 text-black'} `}>
-                Clean the room
-              </p>
-            </h1>
-
-            <p className="flex justify-between items-center">
-              <section className="mt-2">
-                <button className="text-[#5577FF] text-xs bg-[#5577FF4D] py-1 px-2.5 rounded-full font-[600]">Selfcare</button>
-
-              </section>
-
-              <section className="text-[#BBBABE] text-xs">
-                May 20, 2025
-              </section>
-
-            </p>
-
-          </section>
+          }
+        
+        {/* Notes */}
         </article>
 
         <article>
