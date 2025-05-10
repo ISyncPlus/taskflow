@@ -1,14 +1,33 @@
 import React from 'react'
-import initialTodos from '../todos.json'
 import { IoDocumentText } from "react-icons/io5";
 import { IoEllipsisHorizontal } from "react-icons/io5";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
+import Loader from './Loader';
+import { MdDeleteForever } from "react-icons/md";
+
 const RightMenu = () => {
-const [todos, setTodos] = useState(initialTodos);
+  const [todos, setTodos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect( () => {
+    const fetchTodos = async () => {
+      try{
+        const res = await fetch('https://mock-todos-back-1.onrender.com/todos');
+        const data = await res.json();
+        setTodos(data);
+      }catch(error){
+        console.log('Error Fetching Data', error);
+      }finally{
+        setLoading(false);
+      }
+    }
+    fetchTodos();
+  }, [])
+
 const toggleChecked = (id) => {
   setTodos(prev =>
-    prev.map(todo =>
+    prev.map(todo => 
       todo.id == id ? { ...todo, checked: !todo.checked } : todo
     )
   );
@@ -35,33 +54,38 @@ const toggleChecked = (id) => {
 
         <article className="flex flex-col gap-1 mt-3.5 mb-4">
           {/* List 1 jsx*/}
-          {todos.map((todo)=> (
-              <section className="py-3 px-2.5 border border-[#E6E4F0] rounded-xl bg-[#F9F8FF]">
-              <h1 className="flex items-center">
-                <input type="checkbox" name="list" onClick={()=> toggleChecked(todo.id)}    className="hover:cursor-pointer" />
-                <p className={`font-medium relative ml-2 text-sm after:content-[''] after:absolute after:h-[0.5px] after:bg-[#5577FFCC] after:top-1/2 after:w-full after:transition-all after:duration-400 after:left-0 ${todo.checked ? 'after:scale-x-100 text-[#5577FFCC]' : 'after:scale-x-0 text-black'} `}>
-                  {todo.title}
+          {loading ? 
+          ( <Loader /> ) : (
+              todos.map((todo)=> (
+                <section className="py-3 px-2.5 border border-[#E6E4F0] rounded-xl bg-[#F9F8FF]">
+                <h1 className="flex items-center">
+                  <input type="checkbox" name="list" onClick={()=> toggleChecked(todo.id)}    className="hover:cursor-pointer" />
+                  <p className={`font-medium relative ml-2 text-sm after:content-[''] after:absolute after:h-[0.5px] after:bg-[#5577FFCC] after:top-1/2 after:w-full after:transition-all after:duration-400 after:left-0 ${todo.checked ? 'after:scale-x-100 text-[#5577FFCC]' : 'after:scale-x-0 text-black'} `}>
+                    {todo.title}
+                  </p>
+                  <MdDeleteForever className='ml-auto fill-red-600 hover:cursor-pointer'/>
+                </h1>
+    
+                <p className="flex justify-between items-center">
+                  <section className="mt-2">
+                    <button className="text-[#5577FF] text-xs bg-[#5577FF4D] py-1 px-2.5 rounded-full font-[600]">{todo.firstTag}</button>
+                    <button className={`text-[#00B884] text-xs bg-[#00B88433] py-1 px-2.5 rounded-full ml-1 font-[600] ${todo.secondTag == '' ? 'hidden' : ''}`}>{todo.secondTag}</button>
+    
+                  </section>
+    
+                  <section className="text-[#BBBABE] text-xs">
+                    May 20, 2025
+                  </section>
+    
                 </p>
-              </h1>
+    
+    
+              </section>
+            ))
   
-              <p className="flex justify-between items-center">
-                <section className="mt-2">
-                  <button className="text-[#5577FF] text-xs bg-[#5577FF4D] py-1 px-2.5 rounded-full font-[600]">{todo.firstTag}</button>
-                  <button className={`text-[#00B884] text-xs bg-[#00B88433] py-1 px-2.5 rounded-full ml-1 font-[600] ${todo.secondTag == '' ? 'hidden' : ''}`}>{todo.secondTag}</button>
-  
-                </section>
-  
-                <section className="text-[#BBBABE] text-xs">
-                  May 20, 2025
-                </section>
-  
-              </p>
-  
-  
-            </section>
-          ))
-
-          }
+            
+          )}
+          
         
         {/* Notes */}
         </article>
