@@ -44,7 +44,7 @@ const Sidebar = () => {
                 </NavLink>
 
                 <NavLink to="activity" className='flex items-center w-49 p-1'>
-                <img src="/Activity.svg" alt="Activity" className='w-5.5 h-5.5' />
+                <img src="/Activity.svg" alt="Activity" className='w-5.5 h-5.5'/>
                 <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                     Activity  
                 </p>

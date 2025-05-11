@@ -2,14 +2,17 @@ import React from 'react'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router';
 import { useState } from 'react';
+import { useOutletContext } from 'react-router';
 
-const AddTaskPage = ({ addTaskSubmit }) => {
+const AddTaskPage = () => {
+    const { setTodos } = useOutletContext();
     const [title, setTitle] = useState('');
     const [firstTag, setFirstTag] = useState('');
     const [secondTag, setSecondTag] = useState('');
     const navigate = useNavigate();
 
-    const submitForm = (e) => {
+    const submitForm = async (e) => {
+
         e.preventDefault();
 
         const newTask = {
@@ -17,14 +20,25 @@ const AddTaskPage = ({ addTaskSubmit }) => {
             firstTag,
             secondTag,
             checked: false,
-        }
-        addTaskSubmit(newTask);
+        };
+
+        const res = await fetch('https://mock-todos-back-1.onrender.com/todos', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(newTask),
+            });
+
+            if(res.ok){
+                const addedTask = await res.json();
+                setTodos((prev)=> [...prev, addedTask]);
+            }
 
         toast.success('Task Added Successfully!');
 
         navigate('/projects');
-
-    }
+          }
     
   return (
     <div className="bg-[#F9F8FF] w-[803px] h-screen p-6 overflow-y-scroll scrollbar-thin 2xl:h-full flex justify-center items-center">

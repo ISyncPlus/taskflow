@@ -15,22 +15,22 @@ const LatestProjects = () => {
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>
                         <img src="/Latest-1.png" alt="latest-1" className="w-57 h-28" />
 
-                        <p className="flex mt-4">
+                        <figure className="flex mt-4">
                             <img src="/Rectangle 3.svg" alt="cloth icon" className="w-9.5 h-9.5 mr-2"/>
                             
                             <section className="flex flex-col flex-1 ">
-                                <div className="flex justify-between">
+                                <h1 className="flex justify-between">
                                     <p>
                                         Cloth<span className="text-lg">&trade;</span> 
                                     </p>
 
                                     <IoEllipsisHorizontal className="text-[#56555C] mr-2"/>
-                                </div>
+                                </h1>
                                 <p className="text-xs text-[#56555C]">
                                     Lorem ipsum dolor sit amet 
                                 </p>
                             </section>
-                        </p>
+                        </figure>
 
                         <section className="flex gap-1 mt-3">
                             <button className="bg-[#ffe5f1] text-[#FD71AF] text-xs py-1 px-2.5 rounded-xl">Profitable</button>
@@ -43,22 +43,22 @@ const LatestProjects = () => {
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>
                         <img src="/Latest-2.png" alt="latest-2" className="w-57 h-28" />
 
-                        <p className="flex mt-4">
+                        <figure className="flex mt-4">
                             <img src="/Rectangle 2.svg" alt="flower icon" className="w-9.5 h-9.5 mr-2"/>
                             
                             <section className="flex flex-col flex-1 ">
-                                <div className="flex justify-between">
+                                <h1 className="flex justify-between">
                                     <p>
                                         Flower Shop
                                     </p>
 
                                     <IoEllipsisHorizontal className="text-[#56555C] mr-2"/>
-                                </div>
+                                </h1>
                                 <p className="text-xs text-[#56555C]">
                                     Lorem ipsum dolor sit amet 
                                 </p>
                             </section>
-                        </p>
+                        </figure>
 
                         <section className="flex gap-1 mt-3">
                             <button className="bg-[#ffe5f1] text-[#FD71AF] text-xs py-1 px-2.5 rounded-xl">Small Business</button>
@@ -70,22 +70,22 @@ const LatestProjects = () => {
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>
                         <img src="/Latest-3.png" alt="latest-3" className="w-57 h-28" />
 
-                        <p className="flex mt-4">
+                        <figure className="flex mt-4">
                             <img src="/Rectangle 4.svg" alt="gamer icon" className="w-9.5 h-9.5 mr-2"/>
                             
                             <section className="flex flex-col flex-1 ">
-                                <div className="flex justify-between">
+                                <h1 className="flex justify-between">
                                     <p>
                                         Gamer Boy<span className="text-lg">&trade;</span> 
                                     </p>
 
                                     <IoEllipsisHorizontal className="text-[#56555C] mr-2"/>
-                                </div>
+                                </h1>
                                 <p className="text-xs text-[#56555C]">
                                     Lorem ipsum dolor sit amet 
                                 </p>
                             </section>
-                        </p>
+                        </figure>
 
                         <section className="flex gap-1 mt-3">
                             <button className="bg-[#ffe5f1] text-[#FD71AF] text-xs py-1 px-2.5 rounded-xl">Games</button>
@@ -98,22 +98,22 @@ const LatestProjects = () => {
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>
                         <img src="/Latest-4.png" alt="latest-4" className="w-57 h-28" />
 
-                        <p className="flex mt-4">
+                        <figure className="flex mt-4">
                             <img src="/archtech.png" alt="cloth icon" className="w-9.5 h-9.5 mr-2 rounded-full"/>
                             
                             <section className="flex flex-col flex-1 ">
-                                <div className="flex justify-between">
+                                <h1 className="flex justify-between">
                                     <p>
                                         ArchTech<span className="text-lg">&trade;</span> 
                                     </p>
 
                                     <IoEllipsisHorizontal className="text-[#56555C] mr-2"/>
-                                </div>
+                                </h1>
                                 <p className="text-xs text-[#56555C]">
                                     Lorem ipsum dolor sit amet 
                                 </p>
                             </section>
-                        </p>
+                        </figure>
 
                         <section className="flex gap-1 mt-3">
                             <button className="bg-[#ffe5f1] text-[#FD71AF] text-xs py-1 px-2.5 rounded-xl">Science</button>
@@ -126,22 +126,22 @@ const LatestProjects = () => {
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>
                         <img src="/Latest-5.png" alt="latest-5" className="w-57 h-28" />
 
-                        <p className="flex mt-4">
+                        <figure className="flex mt-4">
                             <img src="/orixon.png" alt="cloth icon" className="w-9.5 h-9.5 mr-2 rounded-full"/>
                             
                             <section className="flex flex-col flex-1 ">
-                                <div className="flex justify-between">
+                                <h1 className="flex justify-between">
                                     <p>
                                         Orixon 
                                     </p>
 
                                     <IoEllipsisHorizontal className="text-[#56555C] mr-2"/>
-                                </div>
+                                </h1>
                                 <p className="text-xs text-[#56555C]">
                                     Lorem ipsum dolor sit amet 
                                 </p>
                             </section>
-                        </p>
+                        </figure>
 
                         <section className="flex gap-1 mt-3">
                             <button className="bg-[#ffe5f1] text-[#FD71AF] text-xs py-1 px-2.5 rounded-xl">Creative</button>
@@ -154,22 +154,22 @@ const LatestProjects = () => {
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>
                         <img src="/Latest-6.png" alt="latest-6" className="w-57 h-28" />
 
-                        <p className="flex mt-4">
+                        <figure className="flex mt-4">
                             <img src="/unicom.png" alt="cloth icon" className="w-9.5 h-9.5 mr-2 rounded-full"/> 
                             
                             <section className="flex flex-col flex-1 ">
-                                <div className="flex justify-between">
+                                <h1 className="flex justify-between">
                                     <p>
                                         Uni.com
                                     </p>
 
                                     <IoEllipsisHorizontal className="text-[#56555C] mr-2"/>
-                                </div>
+                                </h1>
                                 <p className="text-xs text-[#56555C]">
                                     Lorem ipsum dolor sit amet 
                                 </p>
                             </section>
-                        </p>
+                        </figure>
 
                         <section className="flex gap-1 mt-3">
                             <button className="bg-[#ffe5f1] text-[#FD71AF] text-xs py-1 px-2.5 rounded-xl">Profitable</button>
