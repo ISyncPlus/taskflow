@@ -80,7 +80,7 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
                   </p>
 
                   {/* delete button */}
-                  <MdDeleteForever onClick={ ()=> deleteTask(todo.id) } className='ml-auto fill-red-600 transition-transform duration-300 h-4.5 w-4.5 hover:cursor-pointer hover:scale-110 '/>
+                  <MdDeleteForever onClick={ ()=> deleteTask(todo.id) } className='ml-auto fill-red-600 transition-transform duration-200 h-4.5 w-4.5 hover:cursor-pointer hover:scale-90'/>
                 </h1>
     
                 <figure className="flex justify-between items-center">
@@ -107,9 +107,15 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
         {/* Notes */}
 
         <article>
-          <header className="flex items-center border-b border-[#E6E4F0] pb-2">
-            <img src="/notes.svg" alt="notes-icon" className="w-5.5 h-5.5 mr-1" />
-            <p className="text-[#56555C] font-medium underline underline-offset-2 ">Notes</p>
+          <header className="flex items-center justify-between border-b border-[#E6E4F0] pb-2 mb-4">
+            <div className='flex items-center'>
+              <img src="/notes.svg" alt="notes-icon" className="w-5.5 h-5.5 mr-1" />
+              <p className="text-[#56555C] font-medium underline underline-offset-2 ">Notes</p>
+            </div>
+        
+            <Link to="/notes/add">
+          <img src="/Add.svg" alt="add-more" className="w-4 h-4 hover:cursor-pointer hover:scale-110 transition-all duration-500" />
+          </Link>
           </header>
 
           {/* Note 1 */}
@@ -138,7 +144,7 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
                  {note.content}
                 </p>
                 <section className="flex items-center gap-1 mt-1">
-                  <p className="text-[#FD71AF] text-xs font-[600] px-2.5 py-1 bg-[#FD71AF4D] rounded-full">{note.firstTag}</p>
+                  <p className={`${note.secondTag == '' ? 'hidden' : ''} text-[#FD71AF] text-xs font-[600] px-2.5 py-1 bg-[#FD71AF4D] rounded-full`}>{note.firstTag}</p>
                   <p className={`${note.secondTag == '' ? 'hidden' : ''} text-[#00B884] text-xs font-[600] px-2.5 py-1 bg-[#00B8844D] rounded-full`}>{note.secondTag}</p>
                   <p className={`text-[#49CCF9] text-xs font-[600] px-2.5 py-1 bg-[#49CCF94D] rounded-full ${note.thirdTag == '' ? 'hidden' : ''}`} >{note.thirdTag}</p>
                 </section>

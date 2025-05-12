@@ -6,6 +6,7 @@ import ProjectsPage from './pages/ProjectsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import UnderConstructionPage from './pages/UnderConstructionPage'
 import AddTaskPage from './pages/AddTaskPage'
+import AddNotePage from './pages/AddNotePage'
 import EditNotePage from './pages/EditNotePage'
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/activity" element={<UnderConstructionPage/>}/>
           <Route path="/projects" element={<ProjectsPage/>}/>
           <Route path="/todos/add" element={<AddTaskPage/>}/>
+          <Route path="/notes/add" element={<AddNotePage/>}/>
           <Route path="/notes/edit-note/:id" element={<EditNotePage/>}/>
 
 
