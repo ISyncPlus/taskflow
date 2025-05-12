@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import HomePage from './pages/HomePage'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router'
 import MainLayout from './layout/MainLayout'
@@ -6,6 +6,7 @@ import ProjectsPage from './pages/ProjectsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import UnderConstructionPage from './pages/UnderConstructionPage'
 import AddTaskPage from './pages/AddTaskPage'
+import EditNotePage from './pages/EditNotePage'
 
 const App = () => {
     const router = createBrowserRouter
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/activity" element={<UnderConstructionPage/>}/>
           <Route path="/projects" element={<ProjectsPage/>}/>
           <Route path="/todos/add" element={<AddTaskPage/>}/>
+          <Route path="/notes/edit-note/:id" element={<EditNotePage/>}/>
 
 
           <Route path="*" element={<NotFoundPage/>}/>

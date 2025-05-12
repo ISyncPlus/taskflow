@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { IoDocumentText } from "react-icons/io5";
 import { IoEllipsisHorizontal } from "react-icons/io5";
 import { Link } from 'react-router';
@@ -6,7 +6,12 @@ import { toast } from 'react-toastify';
 import Loader from './Loader';
 import { MdDeleteForever } from "react-icons/md";
 
-const RightMenu = ({ todos, setTodos, loading }) => {
+const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
+  const [openNoteId, setOpenNoteId] = useState(null);
+
+  const toggleOptions = (id)=> { 
+    setOpenNoteId(prevId=> prevId === id ? null : id);
+  };
 
   const toggleChecked = (id) => {
     setTodos(prev =>
@@ -17,6 +22,8 @@ const RightMenu = ({ todos, setTodos, loading }) => {
   };
 
     const deleteTask = async (id)=> {
+      const confirm = window.confirm('Are you sure?');
+      if (!confirm) return;
       const res = await fetch(`https://mock-todos-back-1.onrender.com/todos/${id}`,{
         method: 'DELETE'
       });
@@ -25,6 +32,19 @@ const RightMenu = ({ todos, setTodos, loading }) => {
         setTodos(prev => prev.filter(todo => todo.id != id));
       }
         toast.error('Job Deleted');
+    };
+
+    const deleteNote = async (id)=> {
+      const confirm = window.confirm('Are you sure you want to delete this?');
+      if (!confirm) return;
+      const res = await fetch(`https://mock-todos-back-1.onrender.com/notes/${id}`,{
+        method: 'DELETE'
+      });
+      
+      if(res.ok){
+        setNotes(prev => prev.filter(note => note.id != id));
+      }
+        toast.error('Note Deleted');
     }
 
   return (
@@ -46,7 +66,7 @@ const RightMenu = ({ todos, setTodos, loading }) => {
         </header>
 
         <article className="flex flex-col gap-1 mt-3.5 mb-4">
-          {/* List 1 jsx*/}
+          {/* Lists jsx*/}
           {loading ? 
           ( <Loader /> ) : (
               todos.map((todo)=> (
@@ -60,7 +80,7 @@ const RightMenu = ({ todos, setTodos, loading }) => {
                   </p>
 
                   {/* delete button */}
-                  <MdDeleteForever onClick={ ()=> deleteTask(todo.id) } className='ml-auto fill-red-600 transition-transform duration-300 hover:cursor-pointer hover:scale-110 '/>
+                  <MdDeleteForever onClick={ ()=> deleteTask(todo.id) } className='ml-auto fill-red-600 transition-transform duration-300 h-4.5 w-4.5 hover:cursor-pointer hover:scale-110 '/>
                 </h1>
     
                 <figure className="flex justify-between items-center">
@@ -82,10 +102,9 @@ const RightMenu = ({ todos, setTodos, loading }) => {
   
             
           )}
-          
+        </article>
         
         {/* Notes */}
-        </article>
 
         <article>
           <header className="flex items-center border-b border-[#E6E4F0] pb-2">
@@ -94,83 +113,40 @@ const RightMenu = ({ todos, setTodos, loading }) => {
           </header>
 
           {/* Note 1 */}
-          <figure className="py-3 px-4 border border-[#E6E4F0] bg-white shadow-md rounded-xl mb-3">
-            <section className="flex items-center justify-between">
-              <h1 className='flex gap-1 items-center'>
-                <IoDocumentText className='fill-[#85848b]' />
-                <p className="text-[#A3A3A3] text-xs">May 14, 2025</p>
-              </h1>
+          {loading ? (<Loader/>) : (
+            notes.map((note)=>(
+              <figure key={note.id} className="py-3 border border-[#E6E4F0] bg-white shadow-md rounded-xl mb-3 relative">
+              <section className="flex items-center justify-between px-4">
+                <h1 className='flex gap-1 items-center'>
+                  <IoDocumentText className='fill-[#85848b]' />
+                  <p className="text-[#A3A3A3] text-xs">May 14, 2025</p>
+                </h1>
 
-              <IoEllipsisHorizontal className="fill-[#56555C]" />
-            </section>
+                <IoEllipsisHorizontal onClick={ () => toggleOptions(note.id)}  className="fill-[#56555C] hover:cursor-pointer" />
+                <section className={`absolute top-8 right-5 border border-[#E6E4F0] rounded-xl shadow-md pl-2 pr-9 py-3 text-xs text-[#5d5c5c] flex flex-col gap-3 bg-white transition-transform duration-100 ${openNoteId === note.id ? 'scale-100 origin-top-right' : 'scale-0 origin-top-right'}`}>
+                  <Link to={`/notes/edit-note/${note.id}`} className="transition-opacity duration-300 hover:opacity-70">Edit</Link>
+                  <Link onClick={ () => deleteNote(note.id)} className="transition-colors duration-300 text-red-500 hover:text-red-600">Delete</Link>
 
-            <section className="mt-2 flex flex-col gap-1 pr-2">
-              <h1 className='font-[600] text-sm'>
-                ChatGPT Tricks for business marketing
-              </h1>
-              <p className="text-[#999999] text-xs">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ducimus nihil cum nulla in, aliquid natus molestias libero repellendus minus laborum vero quidem, vitae nostrum minima quas, sint error perferendis.
-              </p>
-              <section className="flex items-center gap-1">
-                <p className="text-[#FD71AF] text-xs font-[600] px-2.5 py-1 bg-[#FD71AF4D] rounded-full">Tech</p>
-                <p className="text-[#00B884] text-xs font-[600] px-2.5 py-1 bg-[#00B8844D] rounded-full">AI</p>
+                </section>
               </section>
 
-            </section>
-          </figure>
+              <section className="mt-2 flex flex-col gap-1 pr-2 px-4">
+                <h1 className='font-[600] text-sm'>
+                  {note.title}
+                </h1>
+                <p className="text-[#999999] text-xs">
+                 {note.content}
+                </p>
+                <section className="flex items-center gap-1 mt-1">
+                  <p className="text-[#FD71AF] text-xs font-[600] px-2.5 py-1 bg-[#FD71AF4D] rounded-full">{note.firstTag}</p>
+                  <p className={`${note.secondTag == '' ? 'hidden' : ''} text-[#00B884] text-xs font-[600] px-2.5 py-1 bg-[#00B8844D] rounded-full`}>{note.secondTag}</p>
+                  <p className={`text-[#49CCF9] text-xs font-[600] px-2.5 py-1 bg-[#49CCF94D] rounded-full ${note.thirdTag == '' ? 'hidden' : ''}`} >{note.thirdTag}</p>
+                </section>
 
-          {/* Note 2 */}
-          <figure className="py-3 px-4 border border-[#E6E4F0] bg-white shadow-md rounded-xl mb-3">
-            <section className="flex items-center justify-between">
-              <h1 className='flex gap-1 items-center'>
-                <IoDocumentText className='fill-[#85848b]' />
-                <p className="text-[#A3A3A3] text-xs">May 18, 2025</p>
-              </h1>
-
-              <IoEllipsisHorizontal className="fill-[#56555C]" />
-            </section>
-
-            <section className="mt-2 flex flex-col gap-1 pr-2">
-              <h1 className='font-[600] text-sm'>
-                Notes on becoming a successful entrepreneur
-              </h1>
-              <p className="text-[#999999] text-xs">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ducimus nihil cum nulla in, aliquid natus molestias libero repellendus minus laborum vero quidem, vitae nostrum minima quas, sint error perferendis.
-              </p>
-              <section className="flex items-center gap-1">
-                <p className="text-[#49CCF9] text-xs font-[600] px-2.5 py-1 bg-[#49CCF94D] rounded-full">Learning</p>
-                <p className="text-[#5577FF] text-xs font-[600] px-2.5 py-1 bg-[#5577FF4D] rounded-full">Self-improvement</p>
               </section>
-
-            </section>
           </figure>
-
-          {/* Note 3 */}
-          <figure className="py-3 px-4 border border-[#E6E4F0] bg-white shadow-md rounded-xl mb-3">
-            <section className="flex items-center justify-between">
-              <h1 className='flex gap-1 items-center'>
-                <IoDocumentText className='fill-[#85848b]' />
-                <p className="text-[#A3A3A3] text-xs">May 27, 2025</p>
-              </h1>
-
-              <IoEllipsisHorizontal className="fill-[#56555C]" />
-            </section>
-
-            <section className="mt-2 flex flex-col gap-1 pr-2">
-              <h1 className='font-[600] text-sm'>
-                What my life goals are and what I'm currently doing to achieve them
-              </h1>
-              <p className="text-[#999999] text-xs">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ducimus nihil cum nulla in, aliquid natus molestias libero repellendus minus laborum vero quidem, vitae nostrum minima quas, sint error perferendis.
-              </p>
-              <section className="flex items-center gap-1">
-                <p className="text-[#FD71AF] text-xs font-[600] px-2.5 py-1 bg-[#FD71AF4D] rounded-full">Profitable</p>
-                <p className="text-[#5577FF] text-xs font-[600] px-2.5 py-1 bg-[#5577FF4D] rounded-full">1Person</p>
-                <p className="text-[#00B884] text-xs font-[600] px-2.5 py-1 bg-[#00B8844D] rounded-full">AI</p>
-              </section>
-
-            </section>
-          </figure>
+            ))
+          )}
 
         </article>
 
