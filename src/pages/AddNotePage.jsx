@@ -48,7 +48,7 @@ const AddNotePage = () => {
 
         <form onSubmit={submitForm} className="bg-white border border-[#E6E4F0] py-5 px-10 rounded-lg w-[80%] mx-auto">
             <header className='text-2xl text-center font-[500] mb-5'>
-                Add Task
+                Add Note
             </header>
             <section>
                 <label htmlFor="title" className="text-md font-medium text-slate-800">Title</label>
@@ -104,7 +104,7 @@ const AddNotePage = () => {
 
             </section>
 
-            <button type="submit" className="py-1 px-3 border rounded-lg w-full bg-[#5577FF]  text-white mt-2 transition-colors duration-300 hover:cursor-pointer hover:bg-[#4f6eed] active:bg-[#5577FF]">Add Task</button>
+            <button type="submit" className="py-1 px-3 border rounded-lg w-full bg-[#5577FF]  text-white mt-2 transition-colors duration-300 hover:cursor-pointer hover:bg-[#4f6eed] active:bg-[#5577FF]">Add</button>
 
         </form>
        

@@ -31,7 +31,7 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
       if(res.ok){
         setTodos(prev => prev.filter(todo => todo.id != id));
       }
-        toast.error('Job Deleted');
+        toast.error('Task Deleted');
     };
 
     const deleteNote = async (id)=> {
