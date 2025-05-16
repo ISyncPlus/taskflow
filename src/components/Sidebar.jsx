@@ -30,9 +30,9 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
                 {/* Section 1 */}
             <section className="flex flex-col gap-2 mt-7 mb-5 text-[#9896A3] pr-3 w-full flex-1">
 
-                <section className="flex items-center w-49 p-1">
+                <section onClick={()=> toggleOpen()} className={`${ !isFull ? 'pointer-events-none' : ''} flex items-center w-49 p-1 hover:cursor-pointer`}>
                 <img src="/Category.svg" alt="Overview" className='w-5.5 h-5.5' />
-                <p onClick={()=> toggleOpen()}  className={`${!isFull ? 'hidden' : ''} ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer`}>
+                <p  className={`${!isFull ? 'hidden' : ''} ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer`}>
                     Overview  
                 </p>
                 <p><PiCaretRightBold className={`mt-1 text-lg transform translate-x-23 transition-transform duration-300 ${!isFull ? 'hidden' : ''} ${isOpen ? 'rotate-90' : ''} `}/></p>
@@ -40,7 +40,7 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
 
                     {/* overview content */}
                 
-                <div className={`transition-all duration-300 origin-top ${!isOpen ? 'scale-y-0 hidden' : 'scale-y-100'} flex flex-col gap-2 `}> 
+                <div className={`transition-all ease-in-out duration-300 origin-top ${!isOpen || !isFull ? 'hidden' : 'flex'}  flex-col gap-2 `}> 
                     <NavLink to="calendar" className='flex items-center w-49 p-1'>
                         <img src="/Calendar.svg" alt="Calendar" className='w-5.5 h-5.5' />
                         <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
@@ -93,7 +93,7 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
                 <figure className="flex justify-between items-center h-8">
                     <div className="flex items-center">
                     <img src="/Rectangle 2.svg" alt="flower-img" className="w-8 h-8 rounded-2xl"/>
-                    <p className={`ml-1 ${!isFull ? 'hidden' : ''}`}>Flower Shop</p>
+                    <p className={`ml-1 transition-all duration-300 origin-left ${!isFull ? 'scale-x-0' : 'scale-x-100'}`}>Flower Shop</p>
 
                     </div>
                     
@@ -123,7 +123,7 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
                 <figure className="flex justify-between items-center h-8">
                     <div className="flex items-center">
                     <img src="/Rectangle 4.svg" alt="gamer-img" className="w-8 h-8 rounded-2xl"/>
-                    <p className={`${!isFull ? 'hidden' : ''} ml-1`}>Gamer Boy</p>
+                    <p className={`transition-all duration-300 origin-left ${!isFull ? 'scale-x-0' : 'scale-x-100'} ml-1`}>Gamer Boy</p>
 
                     </div>
                     
