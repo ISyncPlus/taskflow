@@ -3,20 +3,22 @@ import { HiOutlineFolderRemove } from "react-icons/hi";
 import { IoEllipsisHorizontal } from "react-icons/io5";
 import { BsStopCircleFill } from "react-icons/bs";
 import LatestProjects from './LatestProjects';
+import { useOutletContext } from 'react-router';
 const Projects = () => {
+    const { isFull } = useOutletContext();
   return (
-    <div className="bg-[#F9F8FF] w-[803px] h-screen p-6 overflow-y-scroll scrollbar-thin 2xl:h-full">
+    <div className="bg-[#F9F8FF] h-screen overflow-y-scroll scrollbar-thin 2xl:h-full">
             {/* Projects Folder */}
-            <section className=" font-medium">
-                <h1 className="text-[rgb(86,85,92)] text-[1rem]">
+            <section className=" font-medium mb-7">
+                <h1 className="text-[rgb(86,85,92)] text-[1rem] ml-3 mt-5">
                 Welcome Back! Muhammed
                 </h1>
 
-                <p className="flex gap-1.5 text-[#56555C] items-center mt-7">
+                <p className="flex gap-1.5 text-[#56555C] items-center mt-7 ml-3">
                     <HiOutlineFolderRemove className='inline w-5 h-5'/> <span className='text-[1rem]'>Folders</span>
                 </p>
 
-                <article className="grid grid-cols-3 gap-5.5 mt-3">
+                <article className={`grid ${ isFull ? 'grid-cols-2' : 'grid-cols-3'} place-items-center gap-3 mt-3`}>
 
                     {/* Folder 1 */}
                     <figure className="relative w-62 h-43 flex flex-col">

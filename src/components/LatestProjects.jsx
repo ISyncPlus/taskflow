@@ -1,15 +1,17 @@
 import React from 'react'
 import { IoEllipsisHorizontal } from "react-icons/io5";
+import { useOutletContext } from 'react-router';
 const LatestProjects = () => {
+    const { isFull } = useOutletContext();
   return (
     <div>
         <section className='mt-7 font-medium'>
-            <p className="flex gap-1.5 text-[#56555C] items-center">
+            <p className="flex gap-1.5 text-[#56555C] items-center ml-3 mb-">
                     <img src="/Time-Square.svg" alt="clock" className="w-4.5 h-4.5"/>
                     <span className='text-[1rem]'>Latest</span>
                 </p>
 
-                <article className="grid grid-cols-3 gap-5">
+                <article className={`grid ${ isFull ? 'grid-cols-2 p-7' : 'grid-cols-3'} place-items-center gap-5`}>
 
                     {/* Latest 1 */}
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>

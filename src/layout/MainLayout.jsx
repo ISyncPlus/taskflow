@@ -12,6 +12,11 @@ const MainLayout = () => {
 
   const [notes, setNotes] = useState([]);
 
+ const [isFull, setIsFull] = useState(false);
+  const toggleFull =()=> {
+    setIsFull((prev)=> !prev);
+  };
+
   useEffect( () => {
     const fetchTodos = async () => {
       try{
@@ -46,13 +51,18 @@ const MainLayout = () => {
         <ScrollToTop/>
         <ToastContainer />
         
-        <Sidebar />
+        <aside className={`transition-all duration-300 ease-in-out overflow-hidden ${isFull ? 'w-[257px]' : 'w-[90px]'} `}>
+          <Sidebar isFull={isFull} setIsFull={setIsFull} toggleFull={toggleFull}/>
+        </aside>
 
-        <main>
-        <Outlet context={{ setTodos, setNotes }}/>
+        <main className="flex-1">
+        <Outlet context={{ setTodos, setNotes, isFull }}/>
         </main>
 
-        <RightMenu todos={todos} setTodos={setTodos} loading={loading} notes={notes} setNotes={setNotes} />
+      <aside className="w-[340px] ">
+         <RightMenu todos={todos} setTodos={setTodos} loading={loading} notes={notes} setNotes={setNotes} />
+      </aside>
+       
         
     </div>
   )
