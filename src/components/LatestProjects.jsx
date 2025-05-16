@@ -6,12 +6,12 @@ const LatestProjects = () => {
   return (
     <div>
         <section className='mt-7 font-medium'>
-            <p className="flex gap-1.5 text-[#56555C] items-center ml-3 mb-">
+            <p className="flex gap-1.5 text-[#56555C] items-center ml-3 mb-7">
                     <img src="/Time-Square.svg" alt="clock" className="w-4.5 h-4.5"/>
                     <span className='text-[1rem]'>Latest</span>
                 </p>
 
-                <article className={`grid ${ isFull ? 'grid-cols-2 p-7' : 'grid-cols-3'} place-items-center gap-5`}>
+                <article className={`grid ${ isFull ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'} place-items-center gap-5`}>
 
                     {/* Latest 1 */}
                     <figure className='w-62 h-57 flex flex-col border-[#E6E4F0] rounded-lg p-3 bg-[#FFFFFF]'>

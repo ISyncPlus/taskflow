@@ -8,4 +8,6 @@
 
 @theme {
   --font-Jakarta: Plus Jakarta Sans, sans-serif;
+  --breakpoint-md: 940px;
+  --breakpoint-lg: 1175px;
 }

@@ -18,7 +18,7 @@ const Projects = () => {
                     <HiOutlineFolderRemove className='inline w-5 h-5'/> <span className='text-[1rem]'>Folders</span>
                 </p>
 
-                <article className={`grid ${ isFull ? 'grid-cols-2' : 'grid-cols-3'} place-items-center gap-3 mt-3`}>
+                <article className={`grid ${ isFull ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'} place-items-center gap-3 mt-3`}>
 
                     {/* Folder 1 */}
                     <figure className="relative w-62 h-43 flex flex-col">
