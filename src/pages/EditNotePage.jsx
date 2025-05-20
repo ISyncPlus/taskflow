@@ -65,7 +65,7 @@ const EditNotePage = () => {
 
 
 
-        navigate('/projects'); 
+        navigate('/notes'); 
 
 
     }

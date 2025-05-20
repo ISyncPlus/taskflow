@@ -28,15 +28,16 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
             </NavLink>
 
                 {/* Section 1 */}
-            <section className="flex flex-col gap-2 mt-7 mb-5 text-[#9896A3] pr-3 w-full flex-1">
+            <section className="flex flex-col gap-2 mt-7 mb-5 text-[#9896A3] pr-3 w-full flex-1 ">
 
                 <section onClick={()=> toggleOpen()} className={`${ !isFull ? 'pointer-events-none' : ''} flex items-center w-49 p-1 hover:cursor-pointer`}>
-                <img src="/Category.svg" alt="Overview" className='w-5.5 h-5.5' />
+                <img src="/Category.svg" alt="Overview" className={`${!isFull ? 'ml-1' : ''} w-5.5 h-5.5`} />
                 <p  className={`${!isFull ? 'hidden' : ''} ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer`}>
                     Overview  
                 </p>
                 <p><PiCaretRightBold className={`mt-1 text-lg transform translate-x-23 transition-transform duration-300 ${!isFull ? 'hidden' : ''} ${isOpen ? 'rotate-90' : ''} `}/></p>
                 </section>
+                {/* <hr className={` ${isFull ? 'hidden' : 'w-12 text-[#E6E4F0] transform -translate-x-1.5 mt-2'}`}/> */}
 
                     {/* overview content */}
                 
@@ -89,7 +90,7 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
                 <img src="/Add.svg" alt="add-more" className="w-4 h-4 hover:cursor-pointer hover:scale-110 transition-all duration-500" />
                 </header>
 
-                <main className="flex flex-col gap-3.5">
+                <main className={`${isFull ? '' : 'border-t-[2px] border-b-[2px] border-[#E6E4F0] py-4 px-1'} flex flex-col gap-3.5`}>
                 <figure className="flex justify-between items-center h-8">
                     <div className="flex items-center">
                     <img src="/Rectangle 2.svg" alt="flower-img" className="w-8 h-8 rounded-2xl"/>
@@ -151,7 +152,7 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
 
                 <figure className="flex justify-between items-center h-8">
                     <div className='flex items-center'>
-                    <FiFileText className="fill-[#ffd6e8] stroke-[#ff80b9] w-5.5 h-6 ml-1"/>
+                    <FiFileText className={`${!isFull ? 'transform translate-x-1' : ''} fill-[#ffd6e8] stroke-[#ff80b9] w-5.5 h-6 ml-1`}/>
                     <p className={`${!isFull ? 'hidden' : ''} text-[#9896A3] ml-1`}>Manage Finances</p>
                     </div>
 
@@ -160,7 +161,7 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
 
                 <figure className="flex justify-between items-center h-8">
                     <div className='flex items-center'>
-                    <FiFileText className="fill-[#d4f1fd] stroke-[#57d5ff] w-5.5 h-6 ml-1"/>
+                    <FiFileText className={`${!isFull ? 'transform translate-x-1' : ''} fill-[#d4f1fd] stroke-[#57d5ff] w-5.5 h-6 ml-1`}/>
                     <p className={`${!isFull ? 'hidden' : ''} text-[#9896A3] ml-1`}>Integrate ChatGPT</p>
                     </div>
 
@@ -169,7 +170,7 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
 
                 <figure className="flex justify-between items-center h-8">
                     <div className='flex items-center'>
-                    <FiFileText className="fill-[#dbd5fc] stroke-[#8876f3] w-5.5 h-6 ml-1"/>
+                    <FiFileText className={`${!isFull ? 'transform translate-x-1' : ''} fill-[#dbd5fc] stroke-[#8876f3] w-5.5 h-6 ml-1`}/>
                     <p className={`${!isFull ? 'hidden' : ''} text-[#9896A3] ml-1`}>Redesign the logo</p>
                     </div>
 
@@ -178,7 +179,7 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
 
                 <figure className="flex justify-between items-center h-8">
                     <div className='flex items-center'>
-                    <FiFileText className="fill-[#bff8e8] stroke-[#42e0b4] w-5.5 h-6 ml-1"/>
+                    <FiFileText className={`${!isFull ? 'transform translate-x-1' : ''} fill-[#bff8e8] stroke-[#42e0b4] w-5.5 h-6 ml-1`}/>
                     <p className={`${!isFull ? 'hidden' : ''} text-[#9896A3] ml-1`}>Invest in DOGE</p>
                     </div>
 

@@ -3,7 +3,7 @@ import { PuffLoader } from 'react-spinners'
 const Loader = ({ loading }) => {
   const override ={ 
     display: "block",
-    margin: "100px auto"
+    margin: "30% auto"
   }
   return (
     <div>

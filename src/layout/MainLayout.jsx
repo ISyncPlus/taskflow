@@ -47,19 +47,19 @@ const MainLayout = () => {
     fetchNotes();
   }, []);
   return (
-    <div className='flex max-h-[1024px] max-w-[1440px] mx-auto scrollbar-thin overflow-x-scroll scroll-smooth'>
+    <div className='flex max-h-[1024px] max-w-[1440px] h-screen mx-auto scrollbar-thin scroll-smooth'>
         <ScrollToTop/>
         <ToastContainer />
         
-        <aside className={`transition-all duration-300 ease-in-out overflow-hidden ${isFull ? 'w-[257px]' : 'w-[90px]'} `}>
+        <aside className={`transition-all duration-300 ease-in-out overflow-hidden ${isFull ? 'w-[257px]' : 'w-[90px]'}`}>
           <Sidebar isFull={isFull} setIsFull={setIsFull} toggleFull={toggleFull}/>
         </aside>
 
-        <main className="flex-1">
-        <Outlet context={{ setTodos, setNotes, isFull }}/>
+        <main className="flex-1 overflow-y-scroll scrollbar-thin">
+        <Outlet context={{todos, notes, setTodos, setNotes, isFull, loading }}/>
         </main>
 
-      <aside className="w-[340px] ">
+      <aside className="w-[340px] overflow-y-scroll scrollbar-thin">
          <RightMenu todos={todos} setTodos={setTodos} loading={loading} notes={notes} setNotes={setNotes} />
       </aside>
        

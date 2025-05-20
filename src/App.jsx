@@ -8,6 +8,8 @@ import UnderConstructionPage from './pages/UnderConstructionPage'
 import AddTaskPage from './pages/AddTaskPage'
 import AddNotePage from './pages/AddNotePage'
 import EditNotePage from './pages/EditNotePage'
+import TodosPage from './pages/TodosPage'
+import NotesPage from './pages/NotesPage'
 
 const App = () => {
     const router = createBrowserRouter
@@ -24,6 +26,8 @@ const App = () => {
           <Route path="/todos/add" element={<AddTaskPage/>}/>
           <Route path="/notes/add" element={<AddNotePage/>}/>
           <Route path="/notes/edit-note/:id" element={<EditNotePage/>}/>
+          <Route path="/todos" element={<TodosPage/>}/>
+          <Route path="/notes" element={<NotesPage/>}/>
 
 
           <Route path="*" element={<NotFoundPage/>}/>

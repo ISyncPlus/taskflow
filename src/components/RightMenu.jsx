@@ -47,14 +47,19 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
         toast.error('Note Deleted');
     }
 
+    const isSide = true;
+
+    const recentTodos = isSide ? todos.slice(0, 3) : todos;
+    const recentNotes = isSide ? notes.slice(0, 3) : notes;
+
   return (
     <div>
-      <aside className="h-[100vh] border-l-1 border-[#E6E4F0] py-7.5 pl-4 pr-3 overflow-y-scroll scrollbar-thin 2xl:h-full">
+      <aside className="border-l-1 border-[#E6E4F0] pt-7.5 pb-4 pl-4 pr-3 overflow-y-scroll scrollbar-thin 2xl:h-full">
 
         <header className="flex justify-between items-center border-b border-[#E6E4F0] pb-2">
           <section className="flex items-center">
             <img src="/Category.svg" alt="Overview" className='w-5.5 h-5.5 mr-1 text-[#56555C]' />
-            <Link className="underline underline-offset-2 text-[#56555C] text-[1rem] hover:cursor-pointer transition-opacity duration-200 hover:opacity-80">
+            <Link to="/todos" className="underline underline-offset-2 text-[#56555C] text-[1rem] hover:cursor-pointer transition-opacity duration-200 hover:opacity-80">
               Todos
             </Link>
 
@@ -69,7 +74,7 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
           {/* Lists jsx*/}
           {loading ? 
           ( <Loader /> ) : (
-              todos.map((todo)=> (
+              recentTodos.map((todo)=> (
                 <section
                 key={todo.id}
                 className="py-3 px-2.5 border border-[#E6E4F0] rounded-xl bg-[#F9F8FF]">
@@ -98,10 +103,11 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
     
     
               </section>
-            ))
-  
-            
+            ))            
           )}
+          <p className={`${todos.length > 3 ? '' : 'hidden'}  text-right mt-1`}>
+          <Link to="/todos" className="text-xs text-blue-500  transition-opacity duration-200 hover:opacity-85 ">See more...</Link>
+          </p>
         </article>
         
         {/* Notes */}
@@ -110,7 +116,7 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
           <header className="flex items-center justify-between border-b border-[#E6E4F0] pb-2 mb-4">
             <div className='flex items-center'>
               <img src="/notes.svg" alt="notes-icon" className="w-5.5 h-5.5 mr-1" />
-              <p className="text-[#56555C] font-medium underline underline-offset-2 ">Notes</p>
+              <Link to="/notes" className="text-[#56555C] font-medium underline underline-offset-2 ">Notes</Link>
             </div>
         
             <Link to="/notes/add">
@@ -120,7 +126,7 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
 
           {/* Note 1 */}
           {loading ? (<Loader/>) : (
-            notes.map((note)=>(
+            recentNotes.map((note)=>(
               <figure key={note.id} className="py-3 border border-[#E6E4F0] bg-white shadow-md rounded-xl mb-3 relative">
               <section className="flex items-center justify-between px-4">
                 <h1 className='flex gap-1 items-center'>
@@ -137,11 +143,11 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
               </section>
 
               <section className="mt-2 flex flex-col gap-1 pr-2 px-4">
-                <h1 className='font-[600] text-sm'>
+                <Link to={`/notes/edit-note/${note.id}`} className='font-[600] text-sm'>
                   {note.title}
-                </h1>
+                </Link>
                 <p className="text-[#999999] text-xs">
-                 {note.content}
+                 {note.content.substring(0, 100) + '...'}
                 </p>
                 <section className="flex items-center gap-1 mt-1">
                   <p className={`${note.secondTag == '' ? 'hidden' : ''} text-[#FD71AF] text-xs font-[600] px-2.5 py-1 bg-[#FD71AF4D] rounded-full`}>{note.firstTag}</p>
@@ -153,6 +159,9 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
           </figure>
             ))
           )}
+          <p className={`${notes.length > 3 ? '' : 'hidden'}  text-center`}>
+          <Link to="/todos" className="text-xs text-blue-500  transition-opacity duration-200 hover:opacity-85 ">See more...</Link>
+          </p>
 
         </article>
 

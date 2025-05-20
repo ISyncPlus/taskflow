@@ -37,7 +37,7 @@ const AddTaskPage = () => {
 
         toast.success('Task Added Successfully!');
 
-        navigate('/projects');
+        navigate('/todos');
           }
     
   return (
