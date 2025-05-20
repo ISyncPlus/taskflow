@@ -54,7 +54,7 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
 
   return (
     <div>
-      <aside className="border-l-1 border-[#E6E4F0] pt-7.5 pb-4 pl-4 pr-3 overflow-y-scroll scrollbar-thin 2xl:h-full">
+      <aside className="border-l-1 border-[#E6E4F0] pt-7.5 pb-4 pl-4 pr-3 scrollbar-thin 2xl:h-full">
 
         <header className="flex justify-between items-center border-b border-[#E6E4F0] pb-2">
           <section className="flex items-center">

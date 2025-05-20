@@ -7,7 +7,7 @@ import { useOutletContext } from 'react-router';
 const Projects = () => {
     const { isFull } = useOutletContext();
   return (
-    <div className="bg-[#F9F8FF] h-screen overflow-y-scroll scrollbar-thin 2xl:h-full">
+    <div className="bg-[#F9F8FF] h-screen scrollbar-thin 2xl:h-full">
             {/* Projects Folder */}
             <section className=" font-medium mb-7">
                 <h1 className="text-[rgb(86,85,92)] text-[1rem] ml-3 mt-5">
