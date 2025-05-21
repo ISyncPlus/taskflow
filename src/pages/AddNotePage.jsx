@@ -44,7 +44,7 @@ const AddNotePage = () => {
           }
     
   return (
-    <div className="bg-[#F9F8FF] w-[803px] h-screen p-6 overflow-y-scroll scrollbar-thin 2xl:h-full flex justify-center items-center">
+    <div className="bg-[#F9F8FF] max-w-[803px] mx-auto h-screen p-6 overflow-y-scroll scrollbar-thin 2xl:h-full flex justify-center items-center">
 
         <form onSubmit={submitForm} className="bg-white border border-[#E6E4F0] py-5 px-10 rounded-lg w-[80%] mx-auto">
             <header className='text-2xl text-center font-[500] mb-5'>

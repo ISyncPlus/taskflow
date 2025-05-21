@@ -70,7 +70,7 @@ const EditNotePage = () => {
 
     }
   return (
-    <div className="bg-[#F9F8FF] w-[803px] h-screen p-6 overflow-y-scroll scrollbar-thin 2xl:h-full flex justify-center items-center">
+    <div className="bg-[#F9F8FF] w-full h-screen p-6 scrollbar-thin 2xl:h-full flex justify-center items-center">
 
         <form key={id} onSubmit={submitEdit} className="bg-white border border-[#E6E4F0] py-5 px-10 rounded-lg w-[80%] mx-auto">
             <header className='text-2xl text-center font-[500] mb-5'>

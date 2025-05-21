@@ -55,7 +55,7 @@ const MainLayout = () => {
           <Sidebar isFull={isFull} setIsFull={setIsFull} toggleFull={toggleFull}/>
         </aside>
 
-        <main className="flex-1 overflow-y-scroll scrollbar-thin">
+        <main className="flex-1 overflow-y-scroll scrollbar-thin overflow-x-clip">
         <Outlet context={{todos, notes, setTodos, setNotes, isFull, loading }}/>
         </main>
 

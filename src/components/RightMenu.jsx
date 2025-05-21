@@ -64,9 +64,9 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
             </Link>
 
           </section>
-          <Link to="/todos/add">
+          {/* <Link to="/todos/add">
           <img src="/Add.svg" alt="add-more" className="w-4 h-4 hover:cursor-pointer hover:scale-110 transition-all duration-500" />
-          </Link>
+          </Link> */}
           
         </header>
 
@@ -119,9 +119,10 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
               <Link to="/notes" className="text-[#56555C] font-medium underline underline-offset-2 ">Notes</Link>
             </div>
         
-            <Link to="/notes/add">
+            {/* <Link to="/notes/add">
           <img src="/Add.svg" alt="add-more" className="w-4 h-4 hover:cursor-pointer hover:scale-110 transition-all duration-500" />
-          </Link>
+          </Link> */}
+          
           </header>
 
           {/* Note 1 */}
@@ -160,7 +161,7 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
             ))
           )}
           <p className={`${notes.length > 3 ? '' : 'hidden'}  text-center`}>
-          <Link to="/todos" className="text-xs text-blue-500  transition-opacity duration-200 hover:opacity-85 ">See more...</Link>
+          <Link to="/notes" className="text-xs text-blue-500  transition-opacity duration-200 hover:opacity-85 ">See more...</Link>
           </p>
 
         </article>

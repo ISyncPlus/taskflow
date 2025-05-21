@@ -6,7 +6,13 @@ import { FaGear } from "react-icons/fa6";
 import { FaRegSquare } from "react-icons/fa6";
 import { NavLink } from 'react-router';
 import { useState } from 'react';
-import { useOutletContext } from 'react-router';
+import { LuNotepadText } from "react-icons/lu";
+import { LuListTodo } from "react-icons/lu";
+import { HiFolderMinus } from "react-icons/hi2";
+import { MdAutoGraph } from "react-icons/md";
+import { RiPieChart2Fill } from "react-icons/ri";
+import { FaCalendarAlt } from "react-icons/fa";
+
 const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggleOpen = () => {
@@ -41,9 +47,11 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
 
                     {/* overview content */}
                 
-                <div className={`transition-all ease-in-out duration-300 origin-top ${!isOpen || !isFull ? 'hidden' : 'flex'}  flex-col gap-2 `}> 
-                    <NavLink to="calendar" className='flex items-center w-49 p-1'>
-                        <img src="/Calendar.svg" alt="Calendar" className='w-5.5 h-5.5' />
+                <div className={`transition-all ease-in-out duration-300 origin-top ${!isOpen || !isFull ? 'hidden' : 'flex'}  flex-col gap-2`}> 
+                    <NavLink to="calendar"  className={({ isActive })=>
+                    `flex items-center w-53 p-1  transition-all duration-200  py-[11px] px-2.5 transform -translate-x-1.5 ${isActive ? 'bg-[#5577FF] text-white rounded-lg' : 'text-[#9896A3]'}`
+                    }>
+                        <FaCalendarAlt className="w-5.5 h-5.5" />
                         <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                             Calendar  
                         </p>
@@ -51,16 +59,20 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
                 
                     </NavLink>
 
-                    <NavLink to="analytics" className='flex items-center w-49 p-1'>
-                        <img src="/Graph.svg" alt="Analytics" className='w-5.5 h-5.5' />
+                    <NavLink to="analytics"  className={({ isActive })=>
+                    `flex items-center w-53 p-1  transition-all duration-200  py-[11px] px-2.5 transform -translate-x-1.5 ${isActive ? 'bg-[#5577FF] text-white rounded-lg' : 'text-[#9896A3]'}`
+                    }>
+                        <RiPieChart2Fill className="w-5.5 h-5.5" />
                         <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                             Analytics 
                         </p>
                     
                     </NavLink>
 
-                    <NavLink to="activity" className='flex items-center w-49 p-1'>
-                        <img src="/Activity.svg" alt="Activity" className='w-5.5 h-5.5'/>
+                    <NavLink to="activity"  className={({ isActive })=>
+                    `flex items-center w-53 p-1  transition-all duration-200  py-[11px] px-2.5 transform -translate-x-1.5 ${isActive ? 'bg-[#5577FF] text-white rounded-lg' : 'text-[#9896A3]'}`
+                    }>
+                        <MdAutoGraph className="w-6 h-6" />
                         <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                             Activity  
                         </p>
@@ -68,10 +80,33 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
                     
                     </NavLink>
 
-                    <NavLink to="/projects" className='flex items-center w-53 p-1 bg-[#5577FF] rounded-lg text-white py-[11px] px-2.5 transform -translate-x-1.5'>
-                        <img src="/Folder.svg" alt="folder-icon" className='w-5.5 h-5.5' />
+                    <NavLink to="/projects" className={({ isActive })=>
+                    `flex items-center w-53 p-1  transition-all duration-200  py-[11px] px-2.5 transform -translate-x-1.5 ${isActive ? 'bg-[#5577FF] text-white rounded-lg' : 'text-[#9896A3]'}`
+                    }>
+                        <HiFolderMinus className="w-5.5 h-5.5" />
                         <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                             Projects  
+                        </p>
+                    
+                    </NavLink>
+
+                    <NavLink to="/todos/add" className={({ isActive })=>
+                    `flex items-center w-53 p-1  transition-all duration-200  py-[11px] px-2.5 transform -translate-x-1.5 ${isActive ? 'bg-[#5577FF] text-white rounded-lg' : 'text-[#9896A3]'}`
+                    }>
+                        <LuListTodo className="w-5.5 h-5.5" />
+                        <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
+                            Add Todo  
+                        </p>
+                    
+                    </NavLink>
+
+                    
+                    <NavLink to="/notes/add" className={({ isActive })=>
+                    `flex items-center w-53 p-1  transition-all duration-200  py-[11px] px-2.5 transform -translate-x-1.5 ${isActive ? 'bg-[#5577FF] text-white rounded-lg' : 'text-[#9896A3]'}`
+                    }>
+                        <LuNotepadText className="w-5.5 h-5.5" />
+                        <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
+                            Add Note  
                         </p>
                     
                     </NavLink>

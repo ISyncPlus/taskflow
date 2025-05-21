@@ -23,7 +23,7 @@ const NotesPage = () => {
     setOpenNoteId(prevId=> prevId === id ? null : id);
     };
   return (
-    <div className="mt-5 p-6 overflow-y-scroll scrollbar-thin">
+    <div className="mt-5 p-6 scrollbar-thin">
         <section className="grid gap-3">
             {loading ? (<Loader/>) : (
             notes.map((note)=>(
