@@ -51,7 +51,7 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
                     <NavLink to="calendar"  className={({ isActive })=>
                     `flex items-center w-53 p-1  transition-all duration-200  py-[11px] px-2.5 transform -translate-x-1.5 ${isActive ? 'bg-[#5577FF] text-white rounded-lg' : 'text-[#9896A3]'}`
                     }>
-                        <FaCalendarAlt className="w-5.5 h-5.5" />
+                        <FaCalendarAlt className="w-5 h-5" />
                         <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                             Calendar  
                         </p>
@@ -72,7 +72,7 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
                     <NavLink to="activity"  className={({ isActive })=>
                     `flex items-center w-53 p-1  transition-all duration-200  py-[11px] px-2.5 transform -translate-x-1.5 ${isActive ? 'bg-[#5577FF] text-white rounded-lg' : 'text-[#9896A3]'}`
                     }>
-                        <MdAutoGraph className="w-6 h-6" />
+                        <MdAutoGraph className="w-6.5 h-6.5" />
                         <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                             Activity  
                         </p>
@@ -93,7 +93,7 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
                     <NavLink to="/todos/add" className={({ isActive })=>
                     `flex items-center w-53 p-1  transition-all duration-200  py-[11px] px-2.5 transform -translate-x-1.5 ${isActive ? 'bg-[#5577FF] text-white rounded-lg' : 'text-[#9896A3]'}`
                     }>
-                        <LuListTodo className="w-5.5 h-5.5" />
+                        <LuListTodo className="w-6 h-6" />
                         <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                             Add Todo  
                         </p>
@@ -104,7 +104,7 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
                     <NavLink to="/notes/add" className={({ isActive })=>
                     `flex items-center w-53 p-1  transition-all duration-200  py-[11px] px-2.5 transform -translate-x-1.5 ${isActive ? 'bg-[#5577FF] text-white rounded-lg' : 'text-[#9896A3]'}`
                     }>
-                        <LuNotepadText className="w-5.5 h-5.5" />
+                        <LuNotepadText className="w-6 h-6" />
                         <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
                             Add Note  
                         </p>
