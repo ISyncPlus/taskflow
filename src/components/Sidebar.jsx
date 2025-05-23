@@ -90,23 +90,23 @@ const Sidebar = ({ isFull, setIsFull, toggleFull }) => {
                     
                     </NavLink>
 
-                    <NavLink to="/todos/add" className={({ isActive })=>
+                    <NavLink to="/todos" className={({ isActive })=>
                     `flex items-center w-53 p-1  transition-all duration-200  py-[11px] px-2.5 transform -translate-x-1.5 ${isActive ? 'bg-[#5577FF] text-white rounded-lg' : 'text-[#9896A3]'}`
                     }>
                         <LuListTodo className="w-6 h-6" />
                         <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
-                            Add Todo  
+                            Todo List  
                         </p>
                     
                     </NavLink>
 
                     
-                    <NavLink to="/notes/add" className={({ isActive })=>
+                    <NavLink to="/notes" className={({ isActive })=>
                     `flex items-center w-53 p-1  transition-all duration-200  py-[11px] px-2.5 transform -translate-x-1.5 ${isActive ? 'bg-[#5577FF] text-white rounded-lg' : 'text-[#9896A3]'}`
                     }>
                         <LuNotepadText className="w-6 h-6" />
                         <p className="ml-2 text-[16px] mt-1 hover:opacity-85 hover:cursor-pointer">
-                            Add Note  
+                            Notes 
                         </p>
                     
                     </NavLink>

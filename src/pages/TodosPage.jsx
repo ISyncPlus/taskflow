@@ -1,5 +1,5 @@
 import React from 'react'
-import { useOutletContext } from 'react-router'
+import { useOutletContext, Link } from 'react-router'
 import { MdDeleteForever } from 'react-icons/md';
 import Loader from '../components/Loader';
 import { toast } from 'react-toastify';
@@ -19,8 +19,15 @@ const TodosPage = () => {
       };
   
   return (
-    <div className="mt-5 p-6">
-        <section className="grid gap-3">
+    <div className=" p-6">
+      <div>
+            {/* <img src="/public/Add.svg" alt="add todos" className="" /> */}
+            <Link to="/todos/add">
+              <button className='w-full p-1 bg-[#5577FF4D] transition-all duration-300 hover:scale-97 text-[#5577FF] text-lg rounded-lg hover:cursor-pointer'>+</button>
+            </Link>
+            
+          </div>
+        <section className="grid gap-3 mt-5">
             {loading ? (<Loader/>) : (todos.map((todo)=>(
                 <section
                                 key={todo.id}

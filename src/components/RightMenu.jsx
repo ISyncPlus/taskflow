@@ -21,18 +21,18 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
     );
   };
 
-    const deleteTask = async (id)=> {
-      const confirm = window.confirm('Are you sure?');
-      if (!confirm) return;
-      const res = await fetch(`https://mock-todos-back-1.onrender.com/todos/${id}`,{
-        method: 'DELETE'
-      });
+    // const deleteTask = async (id)=> {
+    //   const confirm = window.confirm('Are you sure?');
+    //   if (!confirm) return;
+    //   const res = await fetch(`https://mock-todos-back-1.onrender.com/todos/${id}`,{
+    //     method: 'DELETE'
+    //   });
       
-      if(res.ok){
-        setTodos(prev => prev.filter(todo => todo.id != id));
-      }
-        toast.error('Task Deleted');
-    };
+    //   if(res.ok){
+    //     setTodos(prev => prev.filter(todo => todo.id != id));
+    //   }
+    //     toast.error('Task Deleted');
+    // };
 
     const deleteNote = async (id)=> {
       const confirm = window.confirm('Are you sure you want to delete this?');
@@ -83,9 +83,6 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
                   <p className={`font-medium relative ml-2 text-sm after:content-[''] after:absolute after:h-[0.5px] after:bg-[#5577FFCC] after:top-1/2 after:w-full after:transition-all after:duration-400 after:left-0 ${todo.checked ? 'after:scale-x-100 text-[#5577FFCC]' : 'after:scale-x-0 text-black'} `}>
                     {todo.title}
                   </p>
-
-                  {/* delete button */}
-                  <MdDeleteForever onClick={ ()=> deleteTask(todo.id) } className='ml-auto fill-red-600 transition-transform duration-200 h-4.5 w-4.5 hover:cursor-pointer hover:scale-90'/>
                 </h1>
     
                 <figure className="flex justify-between items-center">

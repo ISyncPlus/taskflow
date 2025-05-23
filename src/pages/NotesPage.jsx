@@ -23,8 +23,11 @@ const NotesPage = () => {
     setOpenNoteId(prevId=> prevId === id ? null : id);
     };
   return (
-    <div className="mt-5 p-6 scrollbar-thin">
-        <section className="grid gap-3">
+    <div className="p-6 scrollbar-thin">
+      <Link to="/todos/add">
+                    <button className='w-full p-1 bg-[#5577FF4D] transition-all duration-300 hover:scale-97 text-[#5577FF] text-lg rounded-lg hover:cursor-pointer'>+</button>
+                  </Link>
+        <section className="mt-5 grid gap-3">
             {loading ? (<Loader/>) : (
             notes.map((note)=>(
               <figure key={note.id} className="py-3 border border-[#E6E4F0] bg-white shadow-md rounded-xl mb-3 relative">
