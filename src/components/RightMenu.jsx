@@ -59,7 +59,7 @@ const RightMenu = ({ todos, setTodos, notes, setNotes, loading }) => {
         <header className="flex justify-between items-center border-b border-[#E6E4F0] pb-2">
           <section className="flex items-center">
             <img src="/Category.svg" alt="Overview" className='w-5.5 h-5.5 mr-1 text-[#56555C]' />
-            <Link to="/todos" className="underline underline-offset-2 text-[#56555C] text-[1rem] hover:cursor-pointer transition-opacity duration-200 hover:opacity-80">
+            <Link to="/todos" className="underline underline-offset-2 text-[#56555C] font-medium text-[1rem] hover:cursor-pointer transition-opacity duration-200 hover:opacity-80">
               Todos
             </Link>
 
