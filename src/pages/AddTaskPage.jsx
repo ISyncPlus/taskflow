@@ -41,7 +41,7 @@ const AddTaskPage = () => {
           }
     
   return (
-    <div className="bg-[#F9F8FF] max-w-[803px] mx-auto h-screen p-6 overflow-y-scroll scrollbar-thin 2xl:h-full flex justify-center items-center">
+    <div className="bg-[#F9F8FF] max-w-[full] mx-auto h-screen p-6 scrollbar-thin 2xl:h-full flex justify-center items-center">
 
         <form onSubmit={submitForm} className="bg-white border border-[#E6E4F0] py-5 px-10 rounded-lg w-[80%] mx-auto">
             <header className='text-2xl text-center font-[500] mb-5'>
@@ -53,7 +53,7 @@ const AddTaskPage = () => {
 
                 {/* Tag 1 */}
                 <label htmlFor="firstTag" className='text-md font-medium text-slate-800'>Tag 1</label>
-                <select name="firstTag" id="firstTag" value={firstTag}  onChange={(e)=>{setFirstTag(e.target.value)}} required className="block border border-[#E6E4F0] rounded-lg shadow-sm px-3 py-2 w-full mt-2 mb-3">
+                <select name="firstTag" id="firstTag" value={firstTag}  onChange={(e)=>{setFirstTag(e.target.value)}} className="block border border-[#E6E4F0] rounded-lg shadow-sm px-3 py-2 w-full mt-2 mb-3">
                     <option value="" disabled hidden>Select a Tag</option>
                     <option value="Sport">Sport</option>
                     <option value="Selfcare">Selfcare</option>
@@ -65,7 +65,7 @@ const AddTaskPage = () => {
 
                 {/* Tag 2 */}
                 <label htmlFor="secondTag" className='text-md font-medium text-slate-800'>Tag 2</label>
-                <select name="secondTag" id="secondTag" value={secondTag} onChange={(e)=>{setSecondTag(e.target.value)}} required className="block border border-[#E6E4F0] rounded-lg shadow-sm px-3 py-2  w-full mt-2 mb-3">
+                <select name="secondTag" id="secondTag" value={secondTag} onChange={(e)=>{setSecondTag(e.target.value)}} className="block border border-[#E6E4F0] rounded-lg shadow-sm px-3 py-2  w-full mt-2 mb-3">
                
                     <option value="" disabled hidden>Select a Tag</option>
                     <option value="Sport">Sport</option>
