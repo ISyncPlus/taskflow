@@ -25,7 +25,7 @@ const NotesPage = () => {
   return (
     <div className="p-6 scrollbar-thin">
       <Link to="/todos/add">
-                    <button className='w-full p-1 bg-[#5577FF4D] transition-all duration-300 hover:scale-97 text-[#5577FF] text-lg rounded-lg hover:cursor-pointer'>+</button>
+                    <button className='w-full p-1 bg-[#5577FF4D] transition-all duration-300 hover:scale-97 text-[#5577FF] text-[16px] rounded-lg hover:cursor-pointer'>+ Add Note</button>
                   </Link>
         <section className="mt-5 grid gap-3">
             {loading ? (<Loader/>) : (

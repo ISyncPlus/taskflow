@@ -23,7 +23,7 @@ const TodosPage = () => {
       <div>
             {/* <img src="/public/Add.svg" alt="add todos" className="" /> */}
             <Link to="/todos/add">
-              <button className='w-full p-1 bg-[#5577FF4D] transition-all duration-300 hover:scale-97 text-[#5577FF] text-lg rounded-lg hover:cursor-pointer'>+</button>
+              <button className='w-full p-1 bg-[#5577FF4D] transition-all duration-300 hover:scale-97 text-[#5577FF] text-[16px] rounded-lg hover:cursor-pointer'>+ Add Todo</button>
             </Link>
             
           </div>
