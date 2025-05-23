@@ -46,9 +46,9 @@ const NotesPage = () => {
               </section>
 
               <section className="mt-2 flex flex-col gap-1 pr-2 px-4">
-                <h1 className='font-[600] text-sm'>
+                <Link to={`/notes/edit-note/${note.id}`} className='font-[600] text-sm'>
                   {note.title}
-                </h1>
+                </Link>
                 <p className="text-[#999999] text-xs">
                  {note.content}
                 </p>
