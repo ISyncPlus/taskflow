@@ -45,10 +45,10 @@ const NotesPage = () => {
                 </section>
               </section>
 
-              <section className="mt-2 flex flex-col gap-1 pr-2 px-4">
-                <Link to={`/notes/edit-note/${note.id}`} className='font-[600] text-sm'>
+              <Link to={`/notes/edit-note/${note.id}`}  className="mt-2 flex flex-col gap-1 pr-2 px-4">
+                <h1 className='font-[600] text-sm'>
                   {note.title}
-                </Link>
+                </h1>
                 <p className="text-[#999999] text-xs">
                  {note.content}
                 </p>
@@ -58,7 +58,7 @@ const NotesPage = () => {
                   <p className={`text-[#49CCF9] text-xs font-[600] px-2.5 py-1 bg-[#49CCF94D] rounded-full ${note.thirdTag == '' ? 'hidden' : ''}`} >{note.thirdTag}</p>
                 </section>
 
-              </section>
+              </Link>
           </figure>
             ))
           )}
