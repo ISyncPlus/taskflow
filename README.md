@@ -2,6 +2,8 @@
 
 **TaskFlow** is a simple, responsive task and note management web app built with React. It allows users to create, update, and delete notes and to-do tasks with ease. Whether you're tracking daily goals or jotting down quick ideas, TaskFlow makes the process clean and intuitive.
 
+> ⚠️ Currently optimized for **desktop (PC)** usage only. Mobile responsiveness is in progress.
+
 ## ✨ Features
 
 - ✅ Create, edit, and delete **to-do tasks**
