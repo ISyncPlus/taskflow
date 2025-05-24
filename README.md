@@ -1,12 +1,46 @@
-# React + Vite
+# TaskFlow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**TaskFlow** is a simple, responsive task and note management web app built with React. It allows users to create, update, and delete notes and to-do tasks with ease. Whether you're tracking daily goals or jotting down quick ideas, TaskFlow makes the process clean and intuitive.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Create, edit, and delete **to-do tasks**
+- 📝 Create, edit (by clicking), and delete **notes**
+- 🗂️ Mark to-dos as done by checking them off
+- 🔔 Toast notifications (via **React Toastify**) on deletions
+- 🎨 Responsive UI styled with **Tailwind CSS**, with custom breakpoints
 
-## Expanding the ESLint configuration
+## 🛠️ Built With
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/) – Component-based frontend framework  
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework (with custom breakpoints)
+- [React Toastify](https://fkhadra.github.io/react-toastify/introduction) – Toast alert system for actions like deletions
+- **CRUD Logic** – Implemented for notes and to-dos
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm or yarn
+
+### Installation
+
+```bash
+git clone https://github.com/yourusername/taskflow.git
+cd taskflow
+npm install
+# or
+yarn install
+npm start
+# or
+yarn start
+```
+## 🌐 Deployment
+Live demo: [https://taskflow-wb.vercel.app](https://taskflow-wb.vercel.app)
+
+Deployed via Vercel
+
+## 🪪 License
+This project is licensed under the MIT License.
+
