@@ -11,6 +11,7 @@
 - 🗂️ Mark to-dos as done by checking them off
 - 🔔 Toast notifications (via **React Toastify**) on deletions
 - 🎨 Responsive UI styled with **Tailwind CSS**, with custom breakpoints
+- 🌐 Starting notes and todos are fetched from a mock backend hosted on **Render**
 
 ## 🛠️ Built With
 
@@ -18,6 +19,7 @@
 - [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework (with custom breakpoints)
 - [React Toastify](https://fkhadra.github.io/react-toastify/introduction) – Toast alert system for actions like deletions
 - **CRUD Logic** – Implemented for notes and to-dos
+- **Mock Backend** – Hosted on Render to provide initial data
 
 ## 🚀 Getting Started
 
