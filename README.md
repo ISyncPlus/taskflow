@@ -31,7 +31,7 @@
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/taskflow.git
+git clone https://github.com/iSyncPlus/taskflow.git
 cd taskflow
 npm install
 # or
