@@ -17,6 +17,7 @@ const TodosPage = () => {
         }
           toast.error('Task Deleted');
       };
+
   
   return (
     <div className=" p-6">

@@ -5,6 +5,7 @@ import RightMenu from '../components/RightMenu'
 import ScrollToTop from '../components/ScrollToTop'
 import Sidebar from '../components/Sidebar'
 import { ToastContainer } from 'react-toastify'
+import SwitchToPc from '../media/switch-to-pc.gif'
 const MainLayout = () => {
 
   const [todos, setTodos] = useState([]);
@@ -47,7 +48,13 @@ const MainLayout = () => {
     fetchNotes();
   }, []);
   return (
-    <div className='flex max-h-[1024px] max-w-[1440px] h-screen mx-auto scrollbar-thin scroll-smooth'>
+    <div>
+      <section className="md:hidden flex flex-col justify-center items-center h-screen">
+        <img src={SwitchToPc} alt="switchtopc" className="" />
+        <figcaption className="text-2xl font-Jakarta">Please Switch To PC To View</figcaption>
+      </section>
+
+      <main className='hidden md:flex max-h-[1024px] max-w-[1440px] min-w-[1130px] h-screen mx-auto scrollbar-thin scroll-smooth'>
         <ScrollToTop/>
         <ToastContainer />
         
@@ -64,6 +71,7 @@ const MainLayout = () => {
       </aside>
        
         
+    </main>
     </div>
   )
 }
